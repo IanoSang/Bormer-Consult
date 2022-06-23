@@ -6,10 +6,6 @@ body{
    background: #f1f2f7;
     box-shadow: 0 4px 6px rgba(0,0,0,.2);
 }
-.nav-img{
-    height: 35px;
-    width: 35px;
-}
 header {
   padding: 20px 0;
   background: repeating-linear-gradient(45deg, #f0f2ed, #f0f2ed 20px, #f8f4eb 20px, #f8f4eb 40px);
@@ -215,7 +211,7 @@ nav a:after {content: none;}
 textarea {
   max-width: 400px;
   background-color: #fff;
-  color: #fff;
+  color: #EF474A;
   letter-spacing: 1px;
 }
 
@@ -589,4 +585,10 @@ hr {
     margin-right:0;
     font-weight:600
   }
+}
+input[type=text], input[type=email], textarea {
+ width: 100%;
+ padding: 5px 20px;
+ margin: 8px 0;
+ display: inline-block;
 }
