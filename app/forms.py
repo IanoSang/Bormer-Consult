@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile, Message
 
 
 class SignUpForm(UserCreationForm):
@@ -30,3 +30,9 @@ class UpdateUserProfileForm(forms.ModelForm):
             'name': None,
             'email': None,
         }
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = '__all__'
