@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
  <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -17,7 +18,7 @@
                       Welcome to Bormer
                     </h5>
                     <h1 class="display-2 text-light mb-3 animated slideInDown">
-                      A Immigration & Relocation Consultancy Company
+                      An Immigration & Relocation Consultancy Company
                     </h1>
                     <ol class="breadcrumb mb-4 pb-2">
                      <li class="breadcrumb-item fs-5 text-light">
@@ -252,27 +253,13 @@
 
   <!-- Left contact page -->
 
-    <form id="contact-form" class="form-horizontal" role="form">
-
-      <div class="form-group">
-        <div class="col-sm-12">
-          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-12">
-          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
-        </div>
-      </div>
-
-      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
-
-      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+    <form action="" method="post" id="contact-form" class="form-horizontal" role="form">
+        {% csrf_token %}
+            {{ form }}
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="Submit">
         <div class="alt-send-button">
           <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
         </div>
-
       </button>
 
     </form>
