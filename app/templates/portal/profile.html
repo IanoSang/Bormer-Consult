@@ -20,8 +20,8 @@
           <ul class="nav nav-pills nav-stacked">
               <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
               <li><a href="#"> <i class="fa fa-calendar"></i> Recent Activity <span class="label label-warning pull-right r-activity">9</span></a></li>
-              <li><a href="#"  data-toggle="modal" data-target=".bd-example-modal-md"> <i class="fa fa-edit"></i> Edit profile</a></li>
-              <a class="btn btn-sm btn-outline-secondary mr-3"><strong>Edit Profile</strong></a>
+              <li><a href="#"  class="btn btn-sm btn-outline-secondary mr-3"  data-toggle="modal" data-target=".bd-example-modal-md"> <i class="fa fa-edit"></i> Edit profile</a></li>
+
           </ul>
          <div class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md ">
@@ -44,27 +44,12 @@
   <div class="profile-info col-md-9">
       <div class="panel">
 
-          <footer class="panel-footer">
 
-              <ul class="nav nav-pills">
-                  <li>
-                      <a href="#"><i class="fa fa-map-marker"></i></a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-camera"></i></a>
-                  </li>
-                  <li>
-                      <a href="#"><i class=" fa fa-film"></i></a>
-                  </li>
-                  <li>
-                      <a href="#"><i class="fa fa-microphone"></i></a>
-                  </li>
-              </ul>
-          </footer>
       </div>
       <div class="panel">
           <div class="bio-graph-heading">
-              Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
+             Hello {{user.username}}, Welcome to your Bormer Consult Profile Dashboard.
+              You can  request for consultations and make inquires here
           </div>
           <div class="panel-body bio-graph-info">
               <h1>Your Profile</h1>
@@ -96,7 +81,7 @@
               </div>
           </div>
           <form>
-              <textarea placeholder="Whats in your mind today?" rows="2" class="form-control input-lg p-text-area"></textarea>
+              <textarea placeholder="Make your inquires here " rows="2" class="form-control input-lg p-text-area"></textarea>
           </form>
       </div>
       <div>
