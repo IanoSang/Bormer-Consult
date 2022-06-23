@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import SignUpForm, UpdateUserProfileForm, UpdateUserForm
+from .forms import SignUpForm, UpdateUserProfileForm, UpdateUserForm, ContactForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
@@ -7,7 +7,16 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'index.html')
+    context = {
+        'form': form
+    }
+    return render(request, 'index.html', context)
 
 
 def signup(request):
@@ -27,7 +36,6 @@ def signup(request):
 
 @login_required(login_url='login')
 def profile(request, username):
-
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
         prof_form = UpdateUserProfileForm(request.POST, request.FILES, instance=request.user.profile)
