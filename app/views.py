@@ -27,6 +27,7 @@ def signup(request):
 
 @login_required(login_url='login')
 def profile(request, username):
+
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
         prof_form = UpdateUserProfileForm(request.POST, request.FILES, instance=request.user.profile)

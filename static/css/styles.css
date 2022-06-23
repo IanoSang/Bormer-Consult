@@ -6,6 +6,10 @@ body{
    background: #f1f2f7;
     box-shadow: 0 4px 6px rgba(0,0,0,.2);
 }
+.nav-img{
+    height: 35px;
+    width: 35px;
+}
 header {
   padding: 20px 0;
   background: repeating-linear-gradient(45deg, #f0f2ed, #f0f2ed 20px, #f8f4eb 20px, #f8f4eb 40px);
