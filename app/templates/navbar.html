@@ -8,11 +8,17 @@
     </div>
     <nav>
     <ul>
-      <li><a href="#">home</a></li>
+       {% if user.is_authenticated %}
+      <li><a href="{% url 'index' %}">home</a></li>
+      <li><a href="{% url 'profile' request.user %}">{{user.username}} online</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+      <li><a href="{% url 'index' %}">home</a></li>
       <li><a href="#about">about us</a></li>
       <li><a href="#services">our services</a></li>
       <li><a href="#contact">contact us</a></li>
-      <li><a href="{% url 'profile' request.user.username %}">portal</a></li>
+      <li><a href="{% url 'profile' request.user %}">portal</a></li>
+       {% endif %}
    </ul>
   </nav>
   </div>
